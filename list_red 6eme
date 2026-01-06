@@ -1,0 +1,27 @@
+import random
+ 
+red_init = random.randint(0,255)
+red_fin= random.randint(0,255)
+ 
+list_red=[]
+
+if red_init<red_fin:
+    for i in range (256):
+        if i>red_init :
+            list_red.append(red_init)
+        elif red_init<i<red_fin:
+            list_red.append(i)
+        elif i>red_fin:
+            list_red.append(red_fin)
+else:
+    for i in range(256):
+        if i<red_init:
+            list_red.append(red_init)
+            
+        elif red_fin<i<red_init:
+            list_red.append(2*red_init-i)
+        
+        else:
+            list_red.append(red_fin)
+        
+print(list_red) 
