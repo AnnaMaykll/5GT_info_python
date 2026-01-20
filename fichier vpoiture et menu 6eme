@@ -1,0 +1,47 @@
+def prod_list_voitures():
+    """Lecture du fichier contenant les informations et production d'une liste où chaque élément est un dict contenant les informations d'un véhicule"""
+    list_voitures=[]
+    with open('voitures_location.tsv', 'r', encoding='utf8') as f: #pour ouvrir un fichier en python
+        for ligne in f:
+            dict_datas={} #on peut aussi mettre dict() {} a la place de {}
+            datas=ligne.strip().split('\t')
+            dict_datas['id']=int(datas[0])
+            dict_datas['moteur']=datas[1]
+            dict_datas['kilometrage']=int(datas[2])
+            dict_datas['marque']=datas[3]
+            dict_datas['place']=int(datas[4])
+            dict_datas['annee']=int(datas[5])
+            list_voitures.append(dict_datas)
+    return list_voitures
+ 
+def menu ():
+    print("Pour afficher les véhicules trop anciens, tapez 1")
+    print("Pour afficher une liste des véhicules par listes de carburants, tapez 2")
+    print("Pour afficher une liste des voitures de sport, tapez 3")
+    print("Pour enregistrer un nouveau véhicule, tapez 4")
+    print("Pour supprimer un véhicules de la liste, tapez 5")
+    print("Pour enregister la liste dans un fichier, tapez 6")
+    choix=input("votre choix:")
+    
+    try: 
+        choix=int(choix)
+   
+    except:
+        menu()
+   
+    while choix not in [1,2,3,4,5,6]:
+        print("Veuillez choisir un chiffre entre 1 et 6")
+        choix=input ("Votre choix : ")
+        choix=int(choix)
+    try:
+        choix=int(choix)
+    except:
+        menu()
+        
+     
+if __name__=="__main__":
+    list_voitures = prod_list_voitures()
+    menu()
+
+
+
