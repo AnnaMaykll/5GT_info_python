@@ -30,9 +30,11 @@ def old_cars():
 def sport_cars():
     """crée une liste des voitures trop sportives, cad les voitures de plus de 2 ou 4 ans et fonctionnant à l'essence"""
     list_sport_cars=[]
+    list_old_cars=old_cars()
     for voiture in list_voitures :
         if (voiture['place']<5) & (voiture['moteur']=='essence'):
-            list_sport_cars.append(voiture['id'])
+            if voiture['id'] not in list_old_cars:
+                list_sport_cars.append(voiture['id'])
     return list_sport_cars
 
 def print_list_cars(list_selected_cars,list_name):
@@ -79,3 +81,5 @@ if __name__=="__main__":
         #si on met print(voiture ['marque']) il affiche just la marque.
         #si on met print(voiture.values())= list des valeurs pour chaque voiture.
         #si on met print(voiture.keys())= juste les nom des 'list'
+	
+
