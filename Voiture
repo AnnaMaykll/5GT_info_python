@@ -1,0 +1,299 @@
+from datetime import datetime
+# Importe uniquement l'objet/fonction 'datetime" depuis le module 'datetime"
+›sig ab sidi
+non si br019 #/
+#Cela permet d'utiliser datetime.now( plus loin
+# on importe une sous partie de la bibliotheque datetime car pas besoin de tout
+osanal brien9 $
+def prod_list_voiture0:
+# Définition d'une fonction nommée prod_list_voiture
+# Cette fonction va lire un fichier et fabriquer une liste de voitures
+Lecture du fichier contenant les infos et production d'une liste où chaque élément est
+un dict contenant les informations d'un véhicule...
+#Chaine de documentation (docstring)
+# Sert à décrire ce que fait la fonction
+# Attention : il y a 4 guillemets au début au lieu de 3, ce n'est pas propre
+list_voitures = I]
+# Crée une liste vide qui contiendra toutes les voitures
+with open(./voitures_location.tsv', r', encoding='utf8') as f:
+# Ouvre le fichier 'voitures_location.tsv' en mode lecture (r)
+# encoding='utf8' permet de bien lire les caractères spéciaux #'with' permet de fermer automatiquement le fichier à la fin
+for ligne in f:
+# Parcourt le fichier ligne par ligne
+dici
+datas =0
+# Crée un dictionnaire vide pour stocker les infos d'une voiture
+datas = ligne.strip() split(t)
+# ligne. strip() enlève les espaces et le retour à la ligne en fin de ligne # split("t") découpe la ligne en morceaux en utilisant la tabulation comme séparateur
+# Résultat : une liste de données
+dict_datas(id] -intdatas(O))
+# Prend la 1re valeur de la ligne et la convertit en entier
+# Puis la stocke dans la clé 'id'
+ne|suhov - 160V กรทาน
+# Stocke le type de moteur dans la clé 'moteur"
+s1tsmolix enutiov) 3 (05
+≤ eg6) \
+dict_datas['kilometrage] int(data's(21)
+9b zuig.s sutiov sl ia sitnev #
+# Prend le kilométrage, le convertit en entier, puis le stocke
+МОТИЗНА
+dict_datas marque] = datas(3]
+# Stocke la marque de la voiture
+dict_datas[places'] = int(datas(4))
+# Prend le nombre de places, le convertit en entier, puis le stocke
+dict_datas['année'€ int(datas[5))
+# Prend l'année, la convertit en entier, puis la stocke
+list_voitures.append(dict_datas)
+# Ajoute le dictionnaire de cette voiture à la liste globale des voitures b noitinisa*/
+return list_voitures
+# Renvoie la liste complète des voitures
+def old
+_cars():
+# Définition d'une fonction qui va trouver les vieilles voitures
+'''''Crée une liste de voitures trop vieilles, cad les voitures de plus de 10 ans et plus de
+5000km'****
+V # Docstring : décrit ce que fait la fonction
+# 2 types de 'ou' pour conditions joel ebom ne 'vei.noiteoo
+# XOR et NOR
+# Ces commentaires ne correspondent pas à ce que fait réellement le code
+# Ici, il n'y a ni XOR ni NOR
+list_old_cars =
+V # Liste vide qui contiendra les IDs des voitures considérées comme trop vieilles
+now = datetime.nowe
+# Récupère la date et l'heure actuelles
+current_year = now.year
+for voiture in list_voitures:
+# Parcourt chaque voiture de la liste list_voitures
+# Problème : list_voitures n'est pas définie dans cette fonction sv ent si bne19 */
+age = current_year - voiture annee]
+# Calcule l'âge de la voiture en soustrayant son année à l'année actuelle
+if (age > 10) & (voiture|' kilometrage'] > 5000):
+# Vérifie si la voiture a plus de 10 ans ET plus de 5000 km
+#ATTENTION : '&'fonctionne ici mais ce n'est pas le bon opérateur logique en
+Python
+#Il faudrait utiliser 'and'
+list_old_cars. append (voiture/'id'))
+# Ajoute l'id de la voiture à la liste des vieilles voitures
+V
+return list_old _cars
+In81 ni 1 101
+envoie la liste des ddevoitures trop veilleriel pano su
+def print _engine_type():
+V # Définition d'une fonction qui va afficher les voitures par type de moteur
+erloilA #
+enil si a tusa ei elivé tuog #
+dict_carburant = 0
+V
+# Crée un dictionnaire vide
+# L'idée est d'avoir une clé par type de carburant, avec une liste d'IDs en valeur
+for voiture in list_voitures:
+# Parcourt chaque voiture
+moteur = voiture"'moteur]
+if moteur not in dict_carburant.keys():
+# Vérifie si ce moteur n'existe pas encore comme clé dans le dictionnaire # keys() renvoie la liste des clés du dictionnaire
+# keys(), fonction pour récupérer clés du dict
+dict_carburant[moteur] = 0
+dict_carburant[moteur].append(voiture['id'])
+# Ajoute l'id de la voiture dans la liste correspondant à son moteur
+max_length = max(len(dict_carburant[Diesel), lendict_carburant"'Essence")),
+len(dict carburant['Electrique'))
+#Calcule la longueur maximale entre les 3 listes Diesel, Essence et Electrique r # Problème : si une des clés n'existe pas encore, cela provoquera une erreur # En plus, cette ligne est placée à l'intérieur de la boucle, donc recalculée à chaque
+voiture # code moche car plusieurs actions sur même ligne print (40 *"=)
+# Affiche une ligne de séparation de 40 signes "="
+print("| Essence | Diesel | Electrique |")
+# Affiche l'en-tête du tableau
+print(40 * -)
+V # Affiche une ligne de séparation de 40 signes ".*
+for i in range(max_length):
+# Boucle de 0 jusqu'à max_length - 1
+# Sert à afficher les voitures ligne par ligne dans le tableau
+print("", end="'*)
+# Affiche "T" sans aller à la ligne
+Celon
+# pour éviter le saut à la ligne
+try:
+# Essaie d'afficher l'élément Diesel à la position i
+car_id = dict_carburant['Diesel]()
+# Récupère l'id à l'indice i dans la liste Diesel
+zenullov Jail ni suliov tol
+lov supano hudone? #
+rutiov_Jell : emoldor9 #
+blanks = 12 - len(str(car_id))
+# Calcule le nombre d'espaces à mettre pour aligner l'affichage si sréquel *
+print(f'(blanks *''Kcar_id)", end=')
+# Affiche les espaces puis l'id, sans retour à la ligne n ustom eo la sfthèv *
+except:
+# Si l'indice n'existe pas ou si la clé Diesel n'existe pas co nattonot
+print("
+", end="*)
+# Affiche 12 espaces à la place
+EVS 3910 6110
+aso steixain alo slie #
+print("", ends=')
+# ERREUR: 'ends' n'existe pas
+# Il faut écrire end=*''
+# Ici le code plantera
+รามlay sl sb bil stuou
+# pour éviter le saut à la ligne
+try:
+V # Essaie d'afficher l'élément Essence à la position i
+car_id = dict carburant/'Essence'[i)
+V # Récupère l'id à l'indice i dans la liste Essence
+blanks = 12 - len(str(car_id))
+голрів 06 А
+b notaisade ob ongil N
+V # Calcule le nombre d'espaces pour l'alignement
+print(" blanks *"]" f'(car_id)", end="*)
+V # Affiche les espaces puis l'id
+Les deux f-strings collées fonctionnent, mais c'est inutilement compliqué
+except:
+# Si la clé ou l'indice n'existe pas
+print("
+*end=)
+V # Affiche des espaces à la place
+print"T", ends=")
+# ERREUR : 'ends' n'existe pas
+# Il faut écrire end=™*
+V
+# pour éviter le saut à la ligne
+try:
+# Essaie d'afficher l'élément Electrique à la position i
+e9ullov asl astuol hucons9 t
+car_id = dict_carburant Electrique 1f
+# Récupère l'id à l'indice i dans la liste Electrique
+# Calcule le nombre d'espaces à affichere S, supitsg ne enib tusv sisO #
+print('{blanks *'Kcar_id)", end=")
+# Affiche les espaces puis l'id
+DIO
+except:
+# Si la clé ou l'indice n'existe pas
+print("
+", end=")
+# Affiche des espaces vides
+Toge ab astutiov aeb stail sl s bil etuoi #
+print"", ends=*)
+# ERREUR : 'ends' n'existe pas hoga eb asutov zeb adl zeb stail si siounel t
+#Il faut écrire end=**
+# Tout ce bloc commenté en dessous montre une autre manière de classer les moteurs # mais il n'est pas exécuté car il est commenté
+y erollis iup noilonot enu'b noi
+TeC 茶
+# if voiture['moteur"]=='essence":
+nopâtso etteo eb mon el = emen tail s
+#
+dict_carburant('essence'].append(voiturel'id"))
+# elif voiturel'moteur']=='diesel":
+#
+dict_carburant['diesel"]. append(voiturel'id"
+# elif voiturel'moteur"]=='electrique":
+# dict_carburant['electrique"). append(voiture|"d'))
+# else:
+#
+print(f'Un moteur inconnu a été rencontré pour la voiture: (voiture'id)")
+def sport_cars):
+V# Définition d'une fonction qui retourne les voitures de sport
+'* ée une liste de voitures de sport, cad les voitures de 2 à 4 places et à essence™..
+V # Docstring
+list_sport_cars = [
+V # Crée une liste vide pour stocker les IDs des voitures de sport
+list_old_cars = old-cars()
+#ERREUR : old-cars() est invalide
+# Python comprend cela comme une soustraction : old - cars(
+# Il faut écrire old_cars()
+for voiture in list_voitures:
+# Parcourt toutes les voitures
+# Problème : list_voitures n'est toujours pas définie ici if (voiture|'places'] < 5) & (voiture['moteur'] == "Essence"):
+# Vérifie si la voiture a moins de 5 places et si son moteur est Essence
+# Cela veut dire en pratique 1, 2, 3 ou 4 places
+# Là encore, '&' devrait être remplacé par 'and'
+if voiture['id'] not in list_old_cars:
+# Vérifie que la voiture n'est pas dans la liste des vieilles voitures
+# in not in type de test
+list_sport_cars.append(voiture id'])
+# Ajoute l'id à la liste des voitures de sport
+return list_sport_cars
+# Renvoie la liste des IDs des voitures de sport
+def print_list _cars(list_selected_cars, list_name):
+# Définition d'une fonction qui affiche une liste d'IDs de voitures # list_selected_cars = la liste à afficher # list_name = le nom de cette catégorie
+# la variable peut être remplacée par une variable n'importe ex: peut mettre 'a'
+# MAIS pour être plus précis, plus clair, on met un nom en rapport avec les variables qui vont être introduites
+print(f"Voici la liste des voitures (list_name) :")
+# Affiche un texte avec le nom de la liste
+# Le f-string permet d'insérer la variable directement dans la chaîne
+string de formatage, on peut introduire des variables directement ! entier et string (l'entier sera converti en string)
+ilainozeb elxel nu seve semuoten steil ai sribiA #
+for car in list_selected_cars:
+# Parcourt chaque élément de la liste
+print(car)
+# Affiche chaque id de voiture
+def menu():
+# Elle affiche les choix disponibles à l'utilisateur
+print("Pour afficher les véhicules trop anciens, tapez 1")
+# Affiche le choix 1
+print("Pour afficher une liste des véhicules par type de carburant, tapez 2") sqqA #
+# Affiche le choix 2
+print("Pour afficher une liste de voitures de sport, tapez 3") ov eeb etail seromA #
+# Affiche le choix 3
+print("Pour enregistrer un nouveau véhicule, tapez 4")
+# Affiche le choix 4
+print("Pour supprimer un véhicule de la liste, tapez 5")
+# Affiche le choix 5
+print("Pour enregistrer la liste dans un fichier, tapez 6")
+# Affiche le choix 6
+choix = input("Votre choix: ")
+# Demande à l'utilisateur de saisir un choix # input renvoie toujours une chaîne de caractères
+try:
+# Essaie d'exécuter le bloc sans erreur
+choix = int(choix)
+# Convertit la saisie utilisateur en entier
+if choix == 1:
+# Si l'utilisateur tape 1
+tell D010
+meiroi el til iup noltonol si elleggA #
+list_old_cars = old_cars()
+# Appelle la fonction old_cars et stocke le résultat
+ainsi on stocke la valeur donnée (par return) par la fonction def
+print_list_cars(list_old_cars, "trop vieilles")
+# Affiche la liste retournée avec un texte descriptif #les variables introduites avec lesquelles on va executer la fonction def
+ตอ u03169 *
+elif choix == 2:
+# Si l'utilisateur tape 2
+print_engine_type
+#Appelle la Fonction qui affiche les voitures par moteur nolonot st so notintba *
+rut 6 esidinoqaib xiora esl arbilis si9 #
+elif choix == 3:
+# Si l'utilisateur tape 3
+list_sport_cars = sport_cars()
+# Appelle la fonction sport_cars et stocke le résultat
+print_list_cars(list_sport_cars, "de sport")
+# Affiche la liste des voitures de sport
+except:
+# Si une erreur survient dans le try
+menu()
+# Relance le menu
+# Ce n'est pas idéal car ça crée un appel récursif
+# A force, cela peut poser problème
+# Mieux vaut utiliser une boucle while
+# while choix not in [1, 2, 3, 4, 5, 6):
+#
+print(" Veuillez choisir un numéro entre 1 et 6")
+# Ce bloc commenté montre une autre idée : vérifier les choix avec une boucle
+if_name— _== "_main_
+# Ce bloc s'exécute seulement si on lance directement le fichier Python
+# Il ne s'exécute pas si le fichier est importé ailleurs comme module
+list_old_cars = old_carso
+# Appelle old_cars et stocke le résultat dans une variable
+# Problème : old_cars utilise list _voitures, mais list_ voitures n'a pas encore été creee
+prod_list_voiture(
+# Appelle la fonction qui lit le fichier
+# Problème : le résultat n'est stocké nulle part
+# Il faudrait faire : list_voitures = prod_list voiture
+# for voiture in list_voitures:
+# 'voiture' est le nom d'une variable temporaire définie par la boucle
+#
+#
+pourrait avoir n'importe quel nom
+# voiture. values(), liste des valeurs pour chaque voiture
+# voiture.keys(), liste des étiquettes de chaque dictionnaire dans la liste # voiture['marque"'], récupère la valeur associée à la clé 'marque' # print(voiture), affiche le dictionnaire de manière structurée #= fonction pour parcourir un dictionnaire
+menu()
+# Lance le menu principal
+
