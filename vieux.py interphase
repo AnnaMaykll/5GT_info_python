@@ -1,0 +1,29 @@
+from PyQt6 import QtWidgets, QtGui, QtCore
+from PyQt6.QtWidgets import QWidget, QLabel, QVBoxLayout, QPushButton, QLineEdit, QMessageBox
+# tout ce qui s'affiche a ecran
+from PyQt6.QtGui import QAction
+class UI(QtWidgets.QMainWindow):# GRAPHIQUE UTILISATEUR INTERFACE
+    def __init__(self):
+        super(UI, self).__init__()
+        self.setWindowTitle("ToDO List")
+        self.set_menu()
+        self.statusBar()                       
+        
+        #1. Créer le widget conteneur central
+        central_widget = QWidget() # dans une iterface grapine pls couche 1 couche main window avec un obejt de l'interface / widget dan cette onjet centrale on plae un layout et dans ce layout on place les different widget dedans 
+#donner un titre a notre fenetre pour que se soir plus jolie visuellement ligne 7
+#pour mettre une icone a la fenetre donc assossie il faut une image ligne 8
+
+    def set_menu(self): # dnas la barre de menu on va mettre les dif rubrique pour pouvoir selectionner le task
+        menubar = self.menuBar()
+        appMenu = menubar.addMenu("&Application")
+        taskMenu= menubar.addMenu("&Tâche")
+
+        quitAction = QAction("&Quitter",self) #perment de creer une action et le self dit qu'il fait partie d'une interphase
+        quitAction.setShortcut("Ctrl+Q") #fait un raccoursi
+        quitAction.setStatusTip("Quitter le programme")# au moent ou on va passer avec notre souris sur un des mot de la barre du menu donc ce qui est en haut du clavier, ex fichier et puis t'a un dereoulement d chose
+        quitAction.triggered.connect(lambda : quit(self))
+
+        appMenu.addAction(quitAction) 
+
+
