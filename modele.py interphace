@@ -1,0 +1,32 @@
+import datetime
+#
+#objet(task) avec 6 variables et 1 methode qui est gen_htlm
+class Task(object):  #quand cree objet on peut dire qu'il appartient a une categorie
+    def __init__(self): # dans cette partie ci on defini les different propriete de la tache
+# carasteristique d'une tache, les info qu'on doit assosier a un objet tache dans un programe ; 1 le texte de notre tache
+        self.text=""
+# 2 la priorite, variable de type int donc sous forme de srting ici on fera 1 2 3 donc nombre entier c'est mieux que  faire avec text moyen,... car un entier prend toujour moins de place et on risue de faire moins d'erreur
+        self.prority=int()
+# 3 dire si c'est completer ou non gerer ca avec une variable de type bouléin donc true or false 
+        self.done=bool()
+        self.htlm="" # c'est ârce que on veut gerer la couleur d'affichage de la tahce et pour le barrer ( couleur pour montrer le niveau d'importance) 
+        self.date=datetime.datetime.now() # pour creer la valur du moemtn precis au moment ou on a cree la tache 
+        self.id=int() #numeros d'identification pour exemple pouvoir dire efface la tache numeros 47
+
+
+    def gen_htlm(self):
+        #cree le code htlm en fonction des attribue de la tache 
+        # une maniere d'ecrire = if self.done==True: # donc si la tache est faite
+        if self.done: # maniere d'ecrire plsu aestetique
+            self.htlm=f'<p style="color:grey"><s>(self.text)</s></p>'
+            # là le code fonctionne pas car probleme ligne 15 avec les guillement, on urtilise les guillement pour delimiter la string mais aussi a l'interrieur donc ca ne vas pas du tout alors pour eviter ce proble on va encadrer la strinf-g pas des guillement simple
+        # elif self.done==False maniere plus explcit d'ecrire le texte
+        elif not self.done : #moins intuitif mais plus aestetique plsu style 
+        # ou alors on peut ecrire else aussi juste pour dire false
+            if self.priority==0:
+                self.htlm=f'<p style="color:red">(self.text)</p>'# le 0 c'est le plus important
+            elif self.priority==1:
+                self.htlm=f'<p style="color:orange">(self.text)</p>'
+            elif self.priority==2:
+                self.htlm=f'<p style="color:green">(self.text)</p>'
+        
